@@ -1,0 +1,15 @@
+                    <div th:fragment="inputField(entity, fieldName, placeHolder)">
+                        <div class="tooltip">
+                            <input type="text"
+                                   th:name="${fieldName}"
+                                   th:value="${__${entity}__ != null ? __${entity}__.__${fieldName}__ : ''}"
+                                   th:placeholder="${placeHolder}"
+                                   th:class="${errors != null and errors[__${fieldName}__] != null ? 'error-border' : ''}" />
+
+                            <span class="tooltiptext" th:if="${errors != null and errors[__${fieldName}__] != null}">
+                                <ul>
+                                     <li th:each="err : ${errors[__${fieldName}__]}" th:text="${err}"></li>
+                                </ul>
+                            </span>
+                        </div>
+                    </div>

@@ -1,0 +1,9 @@
+user:
+  api:
+    url: @user.service.url@/api/v1/users
+
+spring:
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
